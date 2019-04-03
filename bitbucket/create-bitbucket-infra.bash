@@ -82,7 +82,8 @@ echo "Mount target $mnt_id created"
 
 echo "Creating User-Data file"
 echo "#!/usr/bin/env bash" > install.bash
-echo "export EFS_MOUNT=$mnt" >> install.bash
+## TODO query efs address (aws efs describe-file-system) and put in $mnt_addr
+echo "export EFS_MOUNT=$mnt_addr" >> install.bash
 cat install-template.bash >> install.bash
 
 # TODO Attache IAM Role for SSM, S3, RDS, EFS from above

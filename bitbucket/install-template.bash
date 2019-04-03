@@ -17,7 +17,7 @@ export JRE_HOME=$JAVA_HOME/jre
 echo Mounting EFS
 cd ~/
 mkdir ~/efs
-sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-7dd5a004.efs.us-east-2.amazonaws.com:/ /mnt/bitbucket-data
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport $EFS_MOUNT  ~/efs
 sudo chmod 777 efs
 
 echo Installing Git
